@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>专注星球</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero">
+      <div id="clock" class="clock">00:00:00</div>
+      <div id="date-line" class="date-line">--月--日 星期-</div>
+      <div class="greeting" id="greeting">你好，开始专注吧</div>
+    </header>
+
+    <section class="grid">
+      <div class="card card-focus">
+        <div class="card-title">今日专注</div>
+        <div class="focus-big">
+          <span id="today-focus">0</span><span class="unit">分钟</span>
+        </div>
+        <div class="focus-meta">
+          <span>番茄 <b id="today-pomodoros">0</b></span>
+          <span>连续 <b id="today-streak">0</b> 天</span>
+        </div>
+        <button id="btn-start" class="start-btn">开始专注</button>
+      </div>
+
+      <div class="card card-trend">
+        <div class="card-title">本周趋势</div>
+        <div id="trend" class="trend"></div>
+      </div>
+
+      <div class="card card-health">
+        <div class="card-title">健康提醒</div>
+        <ul class="health-list" id="health-list"></ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a id="open-options" href="#">打开设置</a>
+    </footer>
+  </main>
+
+  <script src="newtab.js"></script>
+</body>
+</html>

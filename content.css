@@ -1,0 +1,67 @@
+/* FocusPlanet 专注遮罩样式：全屏覆盖，深蓝星空渐变 */
+
+#fp-focus-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important; /* 最高层级，覆盖一切页面内容 */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.20) 0%, transparent 45%),
+    linear-gradient(160deg, #0b1026 0%, #16213e 55%, #0f3460 100%) !important;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  color: #e2e8f0 !important;
+  text-align: center !important;
+}
+
+.fp-overlay-card {
+  max-width: 420px;
+  padding: 40px 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  animation: fp-fade-in 0.35s ease;
+}
+
+.fp-overlay-planet {
+  font-size: 56px;
+  line-height: 1;
+  margin-bottom: 16px;
+  animation: fp-float 3s ease-in-out infinite;
+}
+
+.fp-overlay-title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #67e8f9;
+}
+
+.fp-overlay-sub {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #e2e8f0;
+}
+
+.fp-overlay-tip {
+  margin: 0;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+@keyframes fp-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fp-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}

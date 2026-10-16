@@ -1,0 +1,217 @@
+/* FocusPlanet 新标签页仪表盘样式：深蓝 + 青色渐变，星空感 */
+
+:root {
+  --bg1: #070b1f;
+  --bg2: #0f1530;
+  --accent: #22d3ee;
+  --accent-2: #0ea5e9;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(34, 211, 238, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.18) 0%, transparent 45%),
+    linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 60%, #0f3460 130%);
+  min-height: 100vh;
+}
+
+/* 星星背景（用 box-shadow 生成若干星点） */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(2px 2px at 12% 22%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 30% 12%, #a5f3fc 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 52% 30%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 70% 18%, #a5f3fc 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 88% 26%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 18% 62%, #a5f3fc 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 42% 55%, #ffffff 50%, transparent 51%),
+    radial-gradient(2px 2px at 64% 72%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 82% 58%, #a5f3fc 50%, transparent 51%),
+    radial-gradient(2px 2px at 26% 88%, #ffffff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 58% 90%, #a5f3fc 50%, transparent 51%),
+    radial-gradient(2px 2px at 92% 88%, #ffffff 50%, transparent 51%);
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+.container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+}
+
+/* 顶部时钟区 */
+.hero { text-align: center; margin-bottom: 32px; }
+
+.clock {
+  font-size: 72px;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+  color: #67e8f9;
+  text-shadow: 0 0 40px rgba(34, 211, 238, 0.45);
+}
+
+.date-line {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.greeting {
+  margin-top: 18px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+/* 卡片网格 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.card-title {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+/* 今日专注卡片 */
+.focus-big {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.focus-big .unit { font-size: 16px; font-weight: 400; margin-left: 4px; color: var(--muted); }
+
+.focus-meta {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.focus-meta b { color: var(--text); }
+
+.start-btn {
+  width: 100%;
+  padding: 13px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #06212e;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35);
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+.start-btn:hover { filter: brightness(1.06); }
+.start-btn:active { transform: scale(0.97); }
+.start-btn.is-running { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #2a1205; }
+
+/* 本周趋势柱状图 */
+.trend {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 200px;
+  gap: 8px;
+}
+.trend-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-width: 0;
+}
+.trend-val {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.trend-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 0;
+}
+.trend-bar {
+  width: 70%;
+  min-height: 4px;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  transition: height 0.4s ease;
+}
+.trend-col.today .trend-bar { box-shadow: 0 0 14px rgba(34, 211, 238, 0.6); }
+.trend-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+/* 健康提醒 */
+.health-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.health-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.health-item:last-child { border-bottom: none; }
+.health-emoji { font-size: 18px; }
+.health-info { flex: 1; }
+.health-name { font-size: 14px; }
+.health-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.health-state { font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+.health-state.on  { color: #67e8f9; background: rgba(34, 211, 238, 0.12); }
+.health-state.off { color: #94a3b8; background: rgba(148, 163, 184, 0.12); }
+
+.footer { text-align: center; margin-top: 28px; }
+.footer a { color: var(--muted); text-decoration: none; font-size: 13px; }
+.footer a:hover { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .clock { font-size: 52px; }
+  .grid { grid-template-columns: 1fr; }
+}

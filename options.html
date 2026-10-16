@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>专注星球 - 设置</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div class="brand"><span class="brand-dot"></span>专注星球 · 设置</div>
+      <button id="btn-save" class="btn btn-primary">保存设置</button>
+    </header>
+
+    <section class="card">
+      <h2 class="card-title">番茄钟</h2>
+      <div class="form-grid">
+        <label class="field">
+          <span>专注时长（分钟）</span>
+          <input type="number" id="focusMinutes" min="1" max="180" />
+        </label>
+        <label class="field">
+          <span>短休息（分钟）</span>
+          <input type="number" id="shortBreakMinutes" min="1" max="60" />
+        </label>
+        <label class="field">
+          <span>长休息（分钟）</span>
+          <input type="number" id="longBreakMinutes" min="1" max="120" />
+        </label>
+        <label class="field">
+          <span>几个番茄后长休息</span>
+          <input type="number" id="longBreakInterval" min="1" max="12" />
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">健康提醒</h2>
+      <div class="reminder-row">
+        <span class="reminder-emoji">&#128167;</span>
+        <div class="reminder-info">
+          <div class="reminder-name">喝水提醒</div>
+          <label class="inline">
+            间隔
+            <input type="number" id="waterInterval" min="1" max="240" /> 分钟
+          </label>
+        </div>
+        <input type="checkbox" class="switch" id="waterEnabled" />
+      </div>
+      <div class="reminder-row">
+        <span class="reminder-emoji">&#129496;</span>
+        <div class="reminder-info">
+          <div class="reminder-name">久坐提醒</div>
+          <label class="inline">
+            间隔
+            <input type="number" id="sedentaryInterval" min="1" max="240" /> 分钟
+          </label>
+        </div>
+        <input type="checkbox" class="switch" id="sedentaryEnabled" />
+      </div>
+      <div class="reminder-row">
+        <span class="reminder-emoji">&#128064;</span>
+        <div class="reminder-info">
+          <div class="reminder-name">护眼提醒</div>
+          <div class="reminder-desc">20-20-20 法则 · 每 20 分钟</div>
+        </div>
+        <input type="checkbox" class="switch" id="eyeEnabled" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">网站黑名单</h2>
+      <p class="card-desc">专注进行中访问以下域名时，会显示「专注中」提示页。</p>
+      <div class="blacklist-add">
+        <input type="text" id="site-input" placeholder="例如：example.com 或 https://www.example.com" />
+        <button id="btn-add" class="btn btn-secondary">添加</button>
+      </div>
+      <ul id="blacklist" class="blacklist"></ul>
+      <div id="blacklist-empty" class="empty">黑名单为空，还没有屏蔽任何网站</div>
+    </section>
+
+    <section class="card card-danger">
+      <h2 class="card-title">数据</h2>
+      <p class="card-desc">清除所有设置、黑名单与统计数据，恢复为默认状态。</p>
+      <button id="btn-clear" class="btn btn-danger">清除所有数据</button>
+    </section>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+</html>

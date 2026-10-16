@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="专注星球 FocusPlanet：番茄钟、网站黑名单、健康提醒与学习统计一体的 Chrome 学习专注助手。" />
+  <title>专注星球 FocusPlanet · 学习专注助手</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+
+  <!-- 星空背景（纯 CSS 绘制，无需图片） -->
+  <div class="starfield" aria-hidden="true"></div>
+
+  <!-- ===================== 顶部导航栏 ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#top" aria-label="专注星球首页">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#67e8f9" />
+              <stop offset="1" stop-color="#0ea5e9" />
+            </linearGradient>
+          </defs>
+          <ellipse cx="16" cy="17" rx="12" ry="4.4" fill="none" stroke="#7dd3fc" stroke-width="1.6" opacity="0.7" />
+          <circle cx="16" cy="16" r="8.4" fill="url(#lg)" />
+          <ellipse cx="13" cy="13" rx="3" ry="2.2" fill="#ffffff" opacity="0.35" />
+        </svg>
+        <span class="logo-text">专注星球</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="主导航">
+        <a class="nav-link" href="#about">产品介绍</a>
+        <a class="nav-link" href="#features">核心功能</a>
+        <a class="nav-link" href="#install">安装步骤</a>
+        <a class="nav-link nav-link-cta" href="#download">下载插件</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== Hero 首屏 ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Chrome 学习专注助手</p>
+          <h1 class="hero-title">
+            专注学习，<br />也别忘了<span class="gradient-text">照顾自己</span>
+          </h1>
+          <p class="hero-sub">
+            番茄钟帮你抵御分心，喝水、久坐、护眼提醒替你守护健康，学习统计见证每一天的进步。一个插件，全部搞定。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#install">立即安装</a>
+            <a class="btn btn-ghost" href="#features">查看功能</a>
+          </div>
+          <p class="hero-note">纯本地运行 · 数据只保存在你的浏览器</p>
+        </div>
+
+        <!-- 插件界面模拟（纯 CSS / SVG 绘制） -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mockup-window">
+            <div class="mockup-titlebar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="mockup-name">专注星球</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-mode"><span class="pulse-dot"></span>专注中</div>
+              <div class="mockup-time">25:00</div>
+              <div class="mockup-btns">
+                <span class="mockup-btn mockup-btn-primary">暂停</span>
+                <span class="mockup-btn mockup-btn-ghost">重置</span>
+              </div>
+              <div class="mockup-stats">
+                <div class="mockup-stat"><b>45</b><i>今日分钟</i></div>
+                <div class="mockup-stat"><b>3</b><i>今日番茄</i></div>
+                <div class="mockup-stat"><b>4</b><i>连续天数</i></div>
+              </div>
+              <div class="mockup-toggles">
+                <span class="mockup-toggle on">喝水</span>
+                <span class="mockup-toggle on">久坐</span>
+                <span class="mockup-toggle off">护眼</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 悬浮提示卡片 -->
+          <div class="mockup-float float-notice">
+            <span class="float-icon">&#10003;</span>
+            <span>专注完成，起来喝口水吧</span>
+          </div>
+          <div class="mockup-float float-badge">&#127813; ×3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 产品介绍（解决什么问题） ===================== -->
+    <section class="section" id="about">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">为什么需要它</p>
+          <h2 class="section-title">学习路上，这些坑你踩过吗？</h2>
+          <p class="section-sub">专注星球把「自律」和「健康」打包进一个轻量插件，让专注变成一件有仪式感、又不会亏待自己的事。</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card reveal">
+            <div class="problem-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>分心难专注</h3>
+            <p>总是不自觉点开视频、刷起社交网站，半天过去正事没做。专注期间黑名单拦截，帮你把注意力拉回来。</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>一坐一下午</h3>
+            <p>久坐伤身，腰酸背痛才想起来活动。定时起身提醒，像朋友一样轻轻拍你一下。</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7l5.7 5.6a8 8 0 1 1-11.4 0L12 2.7Z"/></svg>
+            </div>
+            <h3>总忘记喝水</h3>
+            <p>忙起来水杯都不碰一下。温和的喝水提醒，让补水变成习惯而不是任务。</p>
+          </article>
+
+          <article class="problem-card reveal">
+            <div class="problem-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V10"/><path d="M12 20V4"/><path d="M18 20v-6"/></svg>
+            </div>
+            <h3>努力看不见</h3>
+            <p>不知道今天到底专注了多久。专注时长、番茄数、连续天数自动记录，进步一目了然。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 核心功能展示 ===================== -->
+    <section class="section" id="features">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">核心功能</p>
+          <h2 class="section-title">六个功能，一个星球</h2>
+          <p class="section-sub">从专注到休息，从提醒到复盘，专注星球覆盖你学习的完整闭环。</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <h3>番茄钟</h3>
+            <p>25 分钟专注、5 分钟短休息、15 分钟长休息，时长随心自定义，专注结束即时通知。</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M5 5l14 14"/></svg>
+            </div>
+            <h3>网站黑名单</h3>
+            <p>把容易分心的网站加入黑名单，专注期间访问会显示「专注中」提示页。</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7l5.7 5.6a8 8 0 1 1-11.4 0L12 2.7Z"/></svg>
+            </div>
+            <h3>喝水提醒</h3>
+            <p>默认每 30 分钟一次，可开关、可调间隔，文案温和有趣，不催不烦。</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>久坐提醒</h3>
+            <p>默认每 60 分钟一次，提醒你站起来伸个懒腰、走动两分钟再继续。</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>护眼提醒</h3>
+            <p>20-20-20 法则，每 20 分钟看看远处，让眼睛也拥有「下课铃」。</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V10"/><path d="M12 20V4"/><path d="M18 20v-6"/></svg>
+            </div>
+            <h3>学习统计</h3>
+            <p>今日专注时长、番茄数、本周趋势与连续天数，数据保存在本地，随时复盘。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 安装步骤 ===================== -->
+    <section class="section" id="install">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">安装步骤</p>
+          <h2 class="section-title">四步，开始你的专注星球</h2>
+          <p class="section-sub">无需商店，无需账号，本地加载即可使用。</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h3>打开扩展管理页</h3>
+              <p>在 Chrome 地址栏输入 <code>chrome://extensions</code> 并回车。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h3>开启开发者模式</h3>
+              <p>打开页面右上角的 <code>开发者模式</code> 开关。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h3>加载扩展程序</h3>
+              <p>点击左上角的 <code>加载已解压的扩展程序</code> 按钮。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">4</span>
+            <div class="step-body">
+              <h3>选择项目目录</h3>
+              <p>选择包含 <code>manifest.json</code> 的文件夹，加载完成即可开始专注。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== 底部 CTA ===================== -->
+    <section class="cta section" id="download">
+      <div class="section-inner cta-inner reveal">
+        <h2 class="cta-title">准备好开启你的专注星球了吗？</h2>
+        <p class="cta-sub">一个插件，管好你的专注、健康与成长。</p>
+        <div class="cta-actions">
+          <!-- TODO: 替换为真实的下载 / Chrome 商店链接 -->
+          <a class="btn btn-primary btn-lg" href="#install">下载插件</a>
+          <!-- TODO: 替换为真实的 GitHub 仓库地址 -->
+          <a class="btn btn-ghost btn-lg" href="#" target="_blank" rel="noopener">GitHub 仓库</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-dot"></span>
+        <span>专注星球 FocusPlanet</span>
+      </div>
+      <p class="footer-copy">© 2026 FocusPlanet · 用专注和好习惯，点亮学习的星空</p>
+      <div class="footer-links">
+        <a href="#about">产品介绍</a>
+        <a href="#features">核心功能</a>
+        <!-- TODO: 替换为真实 GitHub 链接 -->
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

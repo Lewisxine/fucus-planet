@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>专注星球</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="popup-header">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>专注星球</span>
+    </div>
+    <button id="open-options" class="icon-btn" title="打开设置">&#9881;</button>
+  </header>
+
+  <section class="timer-card">
+    <div id="mode-label" class="mode-label">准备就绪</div>
+    <div id="time-display" class="time-display">25:00</div>
+    <div class="timer-btns">
+      <button id="btn-main" class="btn btn-primary">开始专注</button>
+      <button id="btn-reset" class="btn btn-ghost">重置</button>
+    </div>
+  </section>
+
+  <section class="stats-row">
+    <div class="stat">
+      <div id="stat-focus" class="stat-value">0 分</div>
+      <div class="stat-label">今日专注</div>
+    </div>
+    <div class="stat">
+      <div id="stat-pomodoros" class="stat-value">0</div>
+      <div class="stat-label">今日番茄</div>
+    </div>
+    <div class="stat">
+      <div id="stat-streak" class="stat-value">0 天</div>
+      <div class="stat-label">连续天数</div>
+    </div>
+  </section>
+
+  <section class="health">
+    <div class="section-title">健康提醒</div>
+    <label class="toggle-row">
+      <span class="toggle-emoji">&#128167;</span>
+      <span class="toggle-name">喝水</span>
+      <input type="checkbox" class="switch" id="toggle-water" />
+    </label>
+    <label class="toggle-row">
+      <span class="toggle-emoji">&#129496;</span>
+      <span class="toggle-name">久坐</span>
+      <input type="checkbox" class="switch" id="toggle-sedentary" />
+    </label>
+    <label class="toggle-row">
+      <span class="toggle-emoji">&#128064;</span>
+      <span class="toggle-name">护眼</span>
+      <input type="checkbox" class="switch" id="toggle-eye" />
+    </label>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
